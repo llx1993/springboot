@@ -29,6 +29,8 @@ public class SchedulerConfig {
 
     @Autowired
     private DataSource dataSource;
+    @Autowired
+    private MyFactory myFactory;
 
     /**
      * 调度器
@@ -55,6 +57,7 @@ public class SchedulerConfig {
         factory.setTaskExecutor(schedulerThreadPool());
         factory.setQuartzProperties(quartzProperties());
         factory.setStartupDelay(10);//延迟10s执行
+        factory.setJobFactory(myFactory);
         return factory;
     }
 

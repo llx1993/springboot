@@ -1,8 +1,8 @@
 package com.ctg.test.quartz.listen;
 
 
-import com.ctg.test.quartz.config.MyQuartzJobBean;
-import com.ctg.test.quartz.config.MyQuartzJobBean2;
+import com.ctg.test.quartz.task.MyQuartzJobBean;
+import com.ctg.test.quartz.task.MyQuartzJobBean2;
 import com.ctg.test.quartz.config.SchedulerConfig;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.quartz.*;
@@ -11,8 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
-import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.atomic.AtomicInteger;

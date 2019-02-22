@@ -1,4 +1,4 @@
-package com.ctg.test.quartz.config;
+package com.ctg.test.quartz.task;
 
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
@@ -13,14 +13,14 @@ import org.springframework.scheduling.quartz.QuartzJobBean;
  * @Author: yanhonghai
  * @Date: 2018/11/16 14:47
  */
-@PersistJobDataAfterExecution//持久化
-@DisallowConcurrentExecution//禁止并发执行(Quartz不要并发地执行同一个job定义（这里指一个job类的多个实例）)
-public class MyQuartzJobBean extends QuartzJobBean {
-    protected Logger logger = LoggerFactory.getLogger(MyQuartzJobBean.class);
+@PersistJobDataAfterExecution
+@DisallowConcurrentExecution
+public class MyQuartzJobBean2 extends QuartzJobBean {
+    protected Logger logger = LoggerFactory.getLogger(MyQuartzJobBean2.class);
     @Override
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
         // TODO Auto-generated method stub
-        logger.info("....execute:{}....", context.getTrigger().getKey());
+        logger.info("....execute2:{}....", context.getTrigger().getKey());
     }
 
 }
